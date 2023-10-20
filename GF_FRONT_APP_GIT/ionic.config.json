@@ -1,0 +1,7 @@
+{
+  "name": "GF_FRONT_APP_GIT",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

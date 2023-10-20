@@ -1,0 +1,38 @@
+<ion-content class="ion-padding">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#FF0000" fill-opacity="1"
+       d="M0,224L48,229.3C96,235,192,245,288,256C384,267,480,277,576,256C672,235,768,181,864,144C960,107,1056,85,1152,117.3C1248,149,1344,235,1392,277.3L1440,320L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+    </path>
+  </svg>
+  <div class="ion-text-end ion-margin-end">
+    <ion-button fill="clear" color="danger" (click)="regresar()" class="custom-button">
+      <ion-icon name="arrow-back"></ion-icon> REGRESAR
+    </ion-button>
+  </div>
+  <ion-text class="ion-text-center" color="danger"><h5>Año: {{placa?.id}}</h5></ion-text>
+  <div class="ion-padding container">
+    <img [src]="placa?.foto" />
+  </div>
+  <div>
+    <ion-grid>
+      <ion-row class="ion-text-center" >
+        <ion-col size="4"><ion-text color="danger">Pabellon:</ion-text></ion-col>
+        <ion-col size="8">{{placa?.pabellon?.descripcion}}</ion-col>
+      </ion-row>
+      <ion-row class="ion-text-center">
+        <ion-col size="4"><ion-text color="danger">Piso:</ion-text></ion-col>
+        <ion-col size="8">{{placa?.piso}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+    <ion-list>
+      <ion-item *ngFor="let g of graduados; let index">
+        <ion-avatar slot="start">
+          <a [href]="g.url" [target]="'blank'"><img *ngIf="g.url" [src]="'https://yt3.googleusercontent.com/9XmuxL_LL7CxAOOlbBgTnJIo2uHpoLKHhWzlPt7O49ULQmvBSJlxk1RpX3pJ8jkRBkD6p9BIRg=s900-c-k-c0x00ffffff-no-rj'" /></a>
+          <img *ngIf="!g.url" [src]="'https://cdn.icon-icons.com/icons2/2844/PNG/512/action_unavailable_icon_181083.png'">
+        </ion-avatar>
+        <ion-label>{{ g.nombres +" "+g.apePaterno}}</ion-label>
+      </ion-item>
+    </ion-list>
+</ion-content>

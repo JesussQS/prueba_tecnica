@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>BONG SPEC</title>
+    <link rel="icon" href="img/logo.png">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet" />
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+</head>
+<body>
+    
+<nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="navbar" style="min-height: 12vh;">
+    <!-- Container wrapper -->
+    <div class="container">
+      <!-- Navbar brand -->
+      <a class="navbar-brand me-2" th:href="@{/}">
+        <img
+          src="img/logo.png"
+          height="30"
+          alt="MDB Logo"
+          loading="lazy"
+          style="margin-top: -1px;"
+        />
+      </a>
+      <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarButtonsExample"
+      aria-controls="navbarButtonsExample"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      >
+      <i class="fas fa-bars"></i>
+    </button>
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarButtonsExample">
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="font-family: 'Poppins', sans-serif;">CATEGORÍA</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="font-family: 'Poppins', sans-serif;">TEMPORADA</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="font-family: 'Poppins', sans-serif;">TALLAS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="font-family: 'Poppins', sans-serif;">ESTILO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="font-family: 'Poppins', sans-serif;">COLOR</a>
+          </li>
+        </ul>
+        <!-- Left links -->
+  
+        <div class="d-flex align-items-center">
+            <form class="d-flex">
+                <input
+                  type="search"
+                  class="form-control rounded"
+                  placeholder="Buscar"
+                  aria-label="Search"
+                  aria-describedby="search-addon"
+                />
+            </form>
+          <a class="px-3 me-2" th:if="${emailSession!=null}"></a>      
+          <a th:href="@{/acceder}" th:if="${emailSession==null}" class="btn btn-link px-3 me-2" style="color: #FF7F38;">
+            INGRESAR
+          </a>
+          <a class="btn btn me-3" th:if="${emailSession==null}" style="background-color: #FF7F38; color: white;">
+            REGISTRAR
+          </a>  
+          <a href="#"><img class="img-fluid" th:if="${emailSession!=null}" width="40px" src="https://cdn-icons-png.flaticon.com/512/4202/4202835.png"></a>
+          <a class="px-2 me-2" th:if="${emailSession!=null}"></a>  
+          <a href="#"><img class="img-fluid" th:if="${emailSession!=null && rolSession=='Cliente'}" width="40px" src="https://cdn-icons-png.flaticon.com/512/2038/2038854.png"></a>
+          <a th:href="@{/producto/listar}"><img class="img-fluid" th:if="${emailSession!=null && rolSession=='Admin'}" width="40px" src="https://cdn-icons-png.flaticon.com/512/4946/4946342.png"></a>
+          <a class="px-2 me-2" th:if="${emailSession!=null}"></a> 
+          <a th:href="@{acceder/salir}"><img class="img-fluid" th:if="${emailSession!=null}" width="40px" src="https://cdn-icons-png.flaticon.com/512/4034/4034233.png"></a>  
+        </div>
+      </div>
+      <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+</nav>
+ 
+</body>
+</html>

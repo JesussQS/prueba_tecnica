@@ -1,0 +1,30 @@
+ion-header{
+  box-shadow: none; /* Sombra ligera */
+}
+
+/* Tu archivo .scss */
+.custom-button {
+--background: white !important; /* Establecer el color de fondo en blanco */
+padding-top: 15px;
+color: black !important; /* Establecer el color del texto en negro */
+}
+
+.custom-button div {
+color: red !important; /* Establecer el color del texto en negro */
+font-weight: bold; /* Texto en negrita */
+
+}
+.custom-button {
+width: auto; /* Ajusta el ancho según sea necesario */
+}
+
+ion-button{
+  white-space: normal; /* Permite el salto de línea si es necesario */
+  max-width: 100%; /* Ajusta el ancho máximo del botón al 100% del contenedor */
+  width: auto; /* Permite que el botón se ajuste automáticamente al contenido */
+}
+
+h1{
+  font-size: large;
+  color: red;
+}
