@@ -1,0 +1,29 @@
+<ion-content class="ion-padding">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#FF0000" fill-opacity="1"
+      d="M0,224L48,229.3C96,235,192,245,288,256C384,267,480,277,576,256C672,235,768,181,864,144C960,107,1056,85,1152,117.3C1248,149,1344,235,1392,277.3L1440,320L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+    </path>
+  </svg>
+
+  <div class="ion-text-end ion-margin-end">
+    <ion-button fill="clear" color="danger" [routerLink]="['/menu-opciones']" class="custom-button">
+      <ion-icon name="arrow-back"></ion-icon> REGRESAR
+    </ion-button>
+  </div>
+
+
+  <div class="page-header"></div>
+  <h5>Recomendaciones, por favor ingresar el año de la promoción. <br>Por ejemplo: 2015-02</h5>
+  <div class="ion-padding container">
+    <h4 class="red-bold">Busca tu promoción</h4>
+    <br>
+    <ion-item>
+      <ion-input [type]="'text'" [(ngModel)]="anio" label="Año" [color]="'danger'" labelPlacement="floating" placeholder="Ingrese el año de la promocion"></ion-input>
+    </ion-item>
+    <br><br>
+    <ion-button expand="block" class="main-button" (click)="buscarPlaca()" color="danger">BUSCAR </ion-button>
+    <div class=".low-opacity ">
+      <h5 class="centered low-opacity">Tener en cuenta que las placas en físico solo se encuentran desde el año 1990
+        hasta el 2017*</h5>
+    </div>
+  </div>

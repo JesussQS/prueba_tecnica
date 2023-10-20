@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title th:text="${titulo}">Administrador</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" th:href="@{/css/Admin.css}">
+    <link rel="stylesheet" th:href="@{/css/profilecard.css}">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <nav>
+        <div class="logo-name">
+             <span class="logo_name">Previene</span>
+        </div>
+
+     
+		<div class="menu-items">
+			<ul class="nav-links">
+				<li><a th:href="@{/administrador/index}"> <i
+						class="uil uil-estate"></i> <span class="link-name">INICIO</span>
+				</a></li>
+               
+				<li><a th:href="@{/administrador/listarPaciente}"> <i
+						class="uil uil-files-landscapes"></i> <span class="link-name">PACIENTES</span>
+				</a></li>
+            
+            <li><a th:href="@{/administrador/listarTecnologo}"> <i
+                class="uil uil-files-landscapes"></i> <span class="link-name">TECNOLOGO</span>
+            </a></li>
+            <li><a th:href="@{/administrador/listarCita}"> <i
+                class="uil uil-calender"></i> <span class="link-name">CITAS</span>
+            </a></li>
+            <li><a th:href="@{/administrador/listarArea}"> <i
+                class="uil uil-calender"></i> <span class="link-name">AREAS</span>
+            </a></li>
+            <li><a th:href="@{/administrador/listarAnalisis}"> <i
+                class="uil uil-calender"></i> <span class="link-name">ANALISIS</span>
+            </a></li>
+			</ul>
+
+			<ul class="logout-mode">
+				<li><a th:href="@{/login/cerrar}"> <i
+						class="uil uil-signout"></i> <span class="link-name">CERRAR SESIÓN</span>
+				</a></li>
+			</ul>
+		</div>
+	</nav>
+    <section class="dashboard" >
+		<br>
+		<div class="container">
+			<div class="row" >
+				<div class="col-md-12">
+					<h4 th:text="${'INFORMACIÓN DE LA CITA N°'+' '+cita.id}"></h4>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-4">
+					<hr>
+				</div>
+				<div class="col-md-3 text-center">
+					<h5>Información de la Cita</h5>
+				</div>
+				<div class="col-md-5">
+					<hr>
+				</div>
+			</div>
+            <br>
+            <div class="row">
+                <div class="col-md-3"><strong>DNI DEL PACIENTE:</strong></div>
+                <div class="col-md-3" th:text="${cita.paciente.dni}"></div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-3"><strong>PACIENTE:</strong></div>
+                <div class="col-md-3" th:text="${cita.paciente.nombres+' '+cita.paciente.apellidos}"></div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-3"><strong>TECNOLOGO ASIGNADO:</strong></div>
+                <div class="col-md-3" th:text="${cita.tecnologo.apellidos+' '+cita.tecnologo.nombres}"></div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-3"><strong>FECHA Y HORA:</strong></div>
+                <div class="col-md-3" th:text="${cita.fecha+' '+cita.hora}"></div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-3"><strong>MONTO TOTAL:</strong></div>
+                <div class="col-md-3" th:text="${'S/. '+cita.total}"></div>
+            </div>
+            <br>
+            <div class="row">
+				<div class="col-md-4">
+					<hr>
+				</div>
+				<div class="col-md-3 text-center">
+					<h5>Analisis Requeridos</h5>
+				</div>
+				<div class="col-md-5">
+					<hr>
+				</div>
+			</div>
+            <br>
+            <div th:each="r:${resultados}">
+                <div class="row">
+                    <div class="col-md-5" ><strong th:text="${'AREA: '+r.area.descripcion}"></strong></div>
+                </div>
+                <br>
+                <div th:each="d:${detalleCitas}">
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5" th:if="${r.area.descripcion==d.analisis.area.descripcion}" th:text="${'• '+d.analisis.descripcion}"></div>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="row">
+                <div class="col-md-10"></div>
+                <div class="col-md-2">
+                     <a class="btn" th:href="@{/administrador/listarCita}" style="background-color: #D4E1F4;">REGRESAR</a>
+                </div>
+            </div>
+		</div>
+        <br>
+        
+	</section>
+
+</body>
+<script th:src="@{/js/Admin.js}"></script>
+</html>

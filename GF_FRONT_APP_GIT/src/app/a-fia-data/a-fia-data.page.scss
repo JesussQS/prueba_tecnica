@@ -1,0 +1,28 @@
+.custom-button div {
+    color: white !important; /* Establecer el color del texto en negro */
+    font-weight: bold; /* Texto en negrita */
+
+  }
+
+/* Estilos para centrar el texto */
+.centered-text {
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-top: 20px; /* Opcional: Agrega un espacio superior para centrar verticalmente */
+  }
+  
+  .custom-button {
+    color: white; /* Cambia el color del texto a blanco */
+    background-color: red;
+    width: auto;
+    height: auto; /* Ajusta el ancho según sea necesario */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ajusta los valores según desees */
+
+  }
+
+  .custom-button1 {
+    color: black; /* Cambia el color del texto a blanco */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ajusta los valores según desees */
+
+    width: auto;
+    height: auto; /* Ajusta el ancho según sea necesario */
+  }

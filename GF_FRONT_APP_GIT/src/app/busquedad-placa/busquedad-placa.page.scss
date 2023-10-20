@@ -1,0 +1,40 @@
+/* Estilo para el contenedor */
+
+    /* Estilo para el elemento h3 */
+    h3 {
+        text-align: center; /* Centrar el texto horizontalmente */
+        font-size: 24px; /* Tamaño de fuente (ajusta según tus preferencias) */
+        padding: 20px; /* Espaciado interno (opcional) */
+    }
+
+    .input-container {
+        width: fit-content; /* El contenedor se ajusta al ancho del contenido */
+        margin: 20px auto; /* Margen para centrar horizontalmente */
+        padding: 10px; /* Espaciado interno */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+        border-radius: 5px; /* Borde redondeado */
+    }
+    
+    .red-bold {
+        color: red; /* Color de texto rojo */
+        font-weight: bold; /* Texto en negrita */
+        text-align: center; /* Centrar el texto horizontalmente */
+        font-size: 18px; /* Tamaño de fuente (ajusta según tus preferencias) */
+    }
+    .custom-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centrar horizontalmente */
+        text-align: center; /* Centrar el texto horizontalmente */
+    }
+
+
+/* Estilo para el elemento h5 */
+.centered {
+    text-align: center; /* Centrar el texto horizontalmente */
+}
+
+.low-opacity {
+    opacity: 0.5; /* Baja opacidad (ajusta según tus preferencias) */
+    font-size: 16px; /* Tamaño de fuente (ajusta según tus preferencias) */
+}
